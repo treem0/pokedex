@@ -2,6 +2,7 @@
 body {
     width: 80%;
     margin: auto;
+    background-color: lightcoral;
 }
 .grid-container {
     display: grid;
@@ -36,22 +37,23 @@ p {
     height: 4rem;
 }
   
-  nav { 
+nav { 
       grid-area: nav;
       display: flex;
       justify-content: space-around;
  }
   
-  .search-section {
+.search-section {
        grid-area: search;
        display: flex;
        flex-direction: column;
        justify-content: center;
        align-items: center;
        border: solid;
+       background-color: darkgray;
     }
   
-  .main {
+.main {
        grid-area: main;
        width: 60%; 
        border: solid;
@@ -62,9 +64,13 @@ p {
     text-align: right;
 }
 
-  .single-pokemon-card {
+.single-pokemon-card {
       border: solid;
       text-align: center;
+      background-color: whitesmoke;
+}
+.pokemon-image {
+    width: 30%;
 }
 
 @media (min-width:960px) {
