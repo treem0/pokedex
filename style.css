@@ -1,14 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+JP|Titan+One&display=swap');
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.6fr 0.6fr 0.6fr 2.2fr;
+    grid-template-rows: 0.6fr 0.2fr 0.3fr 2.2fr;
     grid-template-areas: "header" "nav" "search" "main";
+}
+  
+  header { 
+      grid-area: header;
+      text-align: center; 
+}
+h1 {
+    font-family: 'Titan One', cursive;
+}
+h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+a {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+p {
+    font-family: 'Fira Code', monospace;
+}
+.logo {
+    width: 200px;
+}
+  
+  nav { 
+      grid-area: nav;
+      text-align: center;
+ }
+  
+  .search-section {
+       grid-area: search;
+       text-align: center; 
+    }
+  
+  .main {
+       grid-area: main;
+       width: 60%; 
+       border: solid;
+       border-style: solid;
+}
+
+.paging-section {
+    text-align: right;
+}
+
+  .single-pokemon-card {
+      
+      border: solid;
+      text-align: center;
+      
+}
+
+@media (min-width:960px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 3fr;
+        grid-template-areas: "header header header nav" "search pokidex pokidex pokidex";
+      }
+      
+      .header { grid-area: header; }
+      
+      .nav { grid-area: nav; }
+      
+      .search-section { grid-area: search; }
+      
+      .single-pokemon-card { grid-area: pokidex; }
   }
-  
-  header { grid-area: header; }
-  
-  nav { grid-area: nav; }
-  
-  .search-section { grid-area: search; }
-  
-  .main { grid-area: main; }

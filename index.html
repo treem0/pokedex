@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Pokedex</title>
 </head>
@@ -13,18 +14,18 @@
         <div class="grid-container">
     <header>
         <h1>Pokedex</h1>
-        <img src="" alt="cool pokemon pic">
+        <img class="logo" src="./assets/Pokedex.png" alt="cool pokemon pic">
     </header>
     <nav>
         <a>Home</a>
         <a>Pokedex</a>
     </nav>
     <section class="search-section">
-        <input class="pokemon-name-search">
-        <select class="pokemon-type-dropdown">
+        <h2>Pokemon Name: <input class="pokemon-name-search"></h2>
+        <h2>Pokemon Type: <select class="pokemon-type-dropdown"></h2>
 
         </select>
-        <input class="pokemon-attack-search">
+        <h2>Pokemon Attack: <input class="pokemon-attack-search"></h2>
     </section>
 
     <main>
@@ -33,11 +34,11 @@
             <a href="">Next</a>
         </section>
         <section class="single-pokemon-card">
-            <img>
-            <p class="pokemon-name"></p>
-            <p class="pokemon-type1"></p>
-            <p class="pokemon-type2"></p>
-            <p class="pokemon-attack"></p>
+            <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png">
+            <p class="pokemon-name">Name: venusaur</p>
+            <p class="pokemon-type1">Type1: grass</p>
+            <p class="pokemon-type2">Type2: poison</p>
+            <p class="pokemon-attack">Attack: 82</p>
         </section>
     </main>
 
