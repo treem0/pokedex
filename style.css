@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+JP|Titan+One&display=swap');
-
+body {
+    width: 80%;
+    margin: auto;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.6fr 0.2fr 0.3fr 2.2fr;
+    grid-template-rows: 0.4fr 0.1fr 0.2fr 2.2fr;
     grid-template-areas: "header" "nav" "search" "main";
 }
   
-  header { 
+header { 
       grid-area: header;
       text-align: center; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }
 h1 {
     font-family: 'Titan One', cursive;
+    font-size: 32px;
+    margin-left: 3rem;
 }
 h2 {
     font-family: 'Noto Sans JP', sans-serif;
@@ -24,17 +32,23 @@ p {
     font-family: 'Fira Code', monospace;
 }
 .logo {
-    width: 200px;
+    width: 4rem;
+    height: 4rem;
 }
   
   nav { 
       grid-area: nav;
-      text-align: center;
+      display: flex;
+      justify-content: space-around;
  }
   
   .search-section {
        grid-area: search;
-       text-align: center; 
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       border: solid;
     }
   
   .main {
@@ -49,10 +63,8 @@ p {
 }
 
   .single-pokemon-card {
-      
       border: solid;
       text-align: center;
-      
 }
 
 @media (min-width:960px) {

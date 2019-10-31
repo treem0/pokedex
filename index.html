@@ -13,25 +13,35 @@
 <body>
         <div class="grid-container">
     <header>
-        <h1>Pokedex</h1>
         <img class="logo" src="./assets/Pokedex.png" alt="cool pokemon pic">
+        <h1>Pokedex</h1>
     </header>
     <nav>
         <a>Home</a>
         <a>Pokedex</a>
     </nav>
     <section class="search-section">
-        <h2>Pokemon Name: <input class="pokemon-name-search"></h2>
+        <input class="pokemon-name-search" placeholder="Pokemon Name">
         <h2>Pokemon Type: <select class="pokemon-type-dropdown"></h2>
-
+            <option>All</option>
+            <option>Water</option>
+            <option>Fire</option>
+            <option>Grass</option>
         </select>
-        <h2>Pokemon Attack: <input class="pokemon-attack-search"></h2>
+        <input class="pokemon-attack-search" placeholder="Pokemon Attack">
     </section>
 
     <main>
         <section class="paging-section">
             <a href="">Back</a>
             <a href="">Next</a>
+        </section>
+        <section class="single-pokemon-card">
+            <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png">
+            <p class="pokemon-name">Name: venusaur</p>
+            <p class="pokemon-type1">Type1: grass</p>
+            <p class="pokemon-type2">Type2: poison</p>
+            <p class="pokemon-attack">Attack: 82</p>
         </section>
         <section class="single-pokemon-card">
             <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png">
