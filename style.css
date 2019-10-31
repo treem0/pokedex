@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.6fr 0.6fr 0.6fr 2.2fr;
+    grid-template-areas: "header" "nav" "search" "main";
+  }
+  
+  header { grid-area: header; }
+  
+  nav { grid-area: nav; }
+  
+  .search-section { grid-area: search; }
+  
+  .main { grid-area: main; }
