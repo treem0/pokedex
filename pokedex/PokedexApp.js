@@ -3,6 +3,7 @@ import Header from '../common/header.js';
 import SearchOptions from './SearchOptions.js';
 import Paging from './Paging.js';
 import PokemonList from './PokemonList.js';
+import { getPokemon } from '../data/pokemon-api.js';
 
 class PokedexApp extends Component {
 
@@ -18,8 +19,13 @@ class PokedexApp extends Component {
         const paging = new Paging();
         listSection.appendChild(paging.renderDOM());
 
-        const pokemonList = new PokemonList();
+        const pokemonList = new PokemonList({ pokemon: [] });
         listSection.appendChild(pokemonList.renderDOM());
+
+        const pokemon = await getPokemon();
+        const results = pokemon.results;
+
+        pokemonList.update({ pokemon: results })
     }
 
     renderHTML() {

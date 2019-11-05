@@ -11,7 +11,7 @@ body {
     grid-template-areas: "header" "nav" "search" "main";
 }
   
-header { 
+.header-section { 
       grid-area: header;
       text-align: center; 
       display: flex;
