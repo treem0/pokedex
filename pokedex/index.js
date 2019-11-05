@@ -1,5 +1,5 @@
-import PokemonApp from '../pokedex/PokedexApp.js';
+import PokedexApp from '../pokedex/PokedexApp.js';
 
-const app = new PokemonApp();
+const app = new PokedexApp();
 const dom = app.renderDOM();
 document.body.prepend(dom);
