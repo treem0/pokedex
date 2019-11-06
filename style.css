@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+JP|Titan+One&display=swap');
+body {
+    
+    margin: auto;
+    background-color: lightcoral;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.2fr 2.2fr;
+    grid-template-areas: "header" "nav" "search" "main";
+}
+  
+header { 
+      grid-area: header;
+      text-align: center; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aliceblue;
+}
+h1 {
+    font-family: 'Titan One', cursive;
+    font-size: 46px;
+    margin-left: 3rem;
+}
+h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+a {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+p {
+    font-family: 'Fira Code', monospace;
+}
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+  
+nav { 
+      grid-area: nav;
+      display: flex;
+      justify-content: space-around;
+      background-color: aliceblue;
+ }
+ ul {
+     list-style: none;
+ }
+  
+.search-section {
+       grid-area: search;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       background-color: darkgray;
+    }
+  
+.main {
+       grid-area: main;
+       width: 60%; 
+       border: solid;
+       border-style: solid;
+}
+
+.paging-section {
+    text-align: right;
+}
+
+.single-pokemon-card {
+      border: solid;
+      text-align: center;
+      background-color: whitesmoke;
+}
+.pokemon-image {
+    width: 30%;
+}
+
+@media (min-width:960px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .3fr 3fr;
+        grid-template-areas: "header header header nav"
+         "search main main main";
+      }
+      
+    header { 
+          grid-area: header; 
+          display: flex;
+        
+    }
+      
+    nav { 
+          grid-area: nav;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+         }
+    main {
+        grid-area: main;
+        border-top: solid;
+    }
+      
+    .search-section {
+         grid-area: search;
+         display: flex;
+         justify-content: flex-start;
+         border-right: solid;
+         border-top: solid;
+        
+        }
+
+    .paging-section {
+    
+       
+    }
+      
+    .single-pokemon-card { 
+        grid-area: pokidex;
+        
+     }
+  }
