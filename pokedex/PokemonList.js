@@ -10,7 +10,7 @@ class PokemonList extends Component {
             const pokemonItem = new PokemonItem({ pokemon: pokemon });
             const pokmonItemDOM = pokemonItem.renderDOM();
             dom.appendChild(pokmonItemDOM);
-        })
+        });
     }
 
     renderHTML() {
