@@ -29,7 +29,7 @@ class SearchOptions extends Component {
             event.preventDefault();
             const formData = new FormData(form);
 
-            const queryString = window.location.hash.slice(1);
+            const queryString = '';
             const searchParams = new URLSearchParams(queryString);
 
             searchParams.set(formData.get('sort'), formData.get('search'));
