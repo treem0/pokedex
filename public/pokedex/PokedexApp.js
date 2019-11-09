@@ -15,35 +15,44 @@ class PokedexApp extends Component {
         const searchOptions = new SearchOptions();
         searchSection.prepend(searchOptions.renderDOM());
 
-        const listSection = dom.querySelector('.paging-section');
-        const paging = new Paging();
+        const listSection = dom.querySelector('.pokemons');
+        const paging = new Paging({ totalResults: 0 });
         listSection.appendChild(paging.renderDOM());
 
         const pokemonList = new PokemonList({ pokemon: [] });
         listSection.appendChild(pokemonList.renderDOM());
 
-        const pokemon = await getPokemon();
-        const results = pokemon.results;
+        async function loadPokemon() {
+            const response = await getPokemon();
+            const pokemon = response.Search;
+            const totalResults = response.totalResults;
+            pokemonList.update({ pokemon: pokemon });
+            paging.update({ totalResults: totalResults });
+        }
 
-        pokemonList.update({ pokemon: results });
+        loadPokemon();
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();
+        })
     }
 
     renderHTML() {
         return /*html*/`
         <div class="grid-container">
-    <header>
-    </header>
-    <nav>
-    </nav>
-    <section class="search-section">
-    </section>
-
-    <main>
-        <section class="paging-section">
+            <header>
+            </header>
+            <nav>
+            </nav>
+        <section class="search-section">
         </section>
-        <ul class="pokemons">
-        </ul>
-    </main>
+
+        <main>
+            <section class="paging-section">
+            </section>
+            <ul class="pokemons">
+            </ul>
+        </main>
     `;
     }
 }
