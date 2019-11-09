@@ -2,7 +2,7 @@ import Component from '../Component.js';
 
 class PokemonItem extends Component {
     renderHTML() {
-        const pokemon = this.props.pokemon;
+        const pokemon = this.props.pokemons;
         console.log(pokemon);
         
 
