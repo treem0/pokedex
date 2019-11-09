@@ -3,6 +3,7 @@ import Component from '../Component.js';
 class PokemonItem extends Component {
     renderHTML() {
         const pokemon = this.props.pokemon;
+        
 
         return /*html*/`
         <li class="single-pokemon-card">
