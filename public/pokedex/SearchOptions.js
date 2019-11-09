@@ -53,9 +53,18 @@ class SearchOptions extends Component {
                     <input id="search" name="search">
                 </p>
                 <fieldset class="type">
-                    <input class="pokemon-name-search" type="radio" name="type" value="name" checked placeholder="Pokemon Name">
-                    <input class="pokemon-attack-search" type="radio" name="type" value="attack">
-                    <input class="pokemon-defense-search" placeholder="Pokemon Defense" type="radio" name="type" value="defense">
+                    <label>
+                        <input class="pokemon-name-search" type="radio" name="type" value="name" checked placeholder="Pokemon Name">
+                        Name
+                    </label>
+                    <label>
+                        <input class="pokemon-attack-search" type="radio" name="type" value="attack">
+                        Attack
+                    </label>
+                    <label>
+                        <input class="pokemon-defense-search" placeholder="Pokemon Defense" type="radio" name="type" value="defense">
+                        Defense
+                    </label>
                 </fieldset>
                 <h2>Type: <select class="pokemon-type-dropdown"></h2>
                     <option>All</option>
