@@ -19,14 +19,14 @@ class PokedexApp extends Component {
         const paging = new Paging({ totalResults: 0 });
         listSection.appendChild(paging.renderDOM());
 
-        const pokemonList = new PokemonList({ pokemons: [] });
+        const pokemonList = new PokemonList({ pokemon: [] });
         listSection.appendChild(pokemonList.renderDOM());
     
         async function loadPokemon() {
             const response = await getPokemon();
-            const pokemon = response.Search;
-            const totalResults = response.totalResults;
-            pokemonList.update({ pokemons: pokemon });
+            const pokemon = response.results;
+            const totalResults = response.count;
+            pokemonList.update({ pokemon: pokemon });
             paging.update({ totalResults: totalResults });
         }
 
@@ -53,6 +53,7 @@ class PokedexApp extends Component {
             <ul class="pokemons">
             </ul>
         </main>
+        </div>
     `;
     }
 }
