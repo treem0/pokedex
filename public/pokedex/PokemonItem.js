@@ -3,9 +3,7 @@ import Component from '../Component.js';
 class PokemonItem extends Component {
     renderHTML() {
         const pokemon = this.props.pokemon;
-        console.log(pokemon);
         
-
         return /*html*/`
         <li class="single-pokemon-card">
             <img class="pokemon-image" src=${pokemon.url_image}>
