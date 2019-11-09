@@ -45,7 +45,7 @@ class SearchOptions extends Component {
     renderHTML() {
         return /*html*/`
         
-            <form class="search-form">
+            <form class="options">
                 <label for="search">
                     Search:
                 </label>
@@ -54,24 +54,18 @@ class SearchOptions extends Component {
                 </p>
                 <fieldset class="type">
                     <label>
-                        <input class="pokemon-name-search" type="radio" name="type" value="name" checked placeholder="Pokemon Name">
+                        <input type="radio" name="type" value="name" checked>
                         Name
                     </label>
                     <label>
-                        <input class="pokemon-attack-search" type="radio" name="type" value="attack">
+                        <input type="radio" name="type" value="attack">
                         Attack
                     </label>
                     <label>
-                        <input class="pokemon-defense-search" placeholder="Pokemon Defense" type="radio" name="type" value="defense">
+                        <input type="radio" name="type" value="defense">
                         Defense
                     </label>
                 </fieldset>
-                <h2>Type: <select class="pokemon-type-dropdown"></h2>
-                    <option>All</option>
-                    <option>Water</option>
-                    <option>Fire</option>
-                    <option>Grass</option>
-                </select>
             <button>Find</button>
         </form>
     
