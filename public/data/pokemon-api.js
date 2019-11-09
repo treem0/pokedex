@@ -13,6 +13,6 @@ export async function getPokemon() {
             count: 0
         };
     }
-    console.log(data);
+
     return data;
 }
