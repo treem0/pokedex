@@ -15,7 +15,7 @@ class PokedexApp extends Component {
         const searchOptions = new SearchOptions();
         searchSection.prepend(searchOptions.renderDOM());
 
-        const listSection = dom.querySelector('.pokemons');
+        const listSection = dom.querySelector('.paging-section');
         const paging = new Paging();
         listSection.appendChild(paging.renderDOM());
 
