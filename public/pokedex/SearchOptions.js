@@ -1,21 +1,20 @@
 import Component from '../Component.js';
 
 class SearchOptions extends Component {
-
     onRender(form) {
         const searchInput = form.querySelector('input[name=search]');
-        const typeRadios = form.querySelectorAll('input[name=type]');
+        const typeRadios = form.querySelectorAll('input[name=sort]');
 
         function updateControls() {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchInput.value = searchParams.get('s') || '';
+            searchInput.value = searchParams.get('pokemon') || searchParams.get('attack') || searchParams.get('defense') || '';
 
-            const type = searchParams.get('type');
-            if (type) {
+            const type = searchParams.get('sort');
+            if (sort) {
                 typeRadios.forEach(typeRadios => {
-                    typeRadios.checked = typeRadios.value === type;
+                    typeRadios.checked = typeRadios.value === sort;
                 });
             }
         }
@@ -33,8 +32,7 @@ class SearchOptions extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
 
-            searchParams.set('type', formData.get('type'));
-            searchParams.set('s', formData.get('search'));
+            searchParams.set(formData.get('sort'), formData.get('search'));
             searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();
@@ -54,15 +52,15 @@ class SearchOptions extends Component {
                 </p>
                 <fieldset class="type">
                     <label>
-                        <input type="radio" name="type" value="name" checked>
+                        <input type="radio" name="sort" value="name" checked>
                         Name
                     </label>
                     <label>
-                        <input type="radio" name="type" value="attack">
+                        <input type="radio" name="sort" value="attack">
                         Attack
                     </label>
                     <label>
-                        <input type="radio" name="type" value="defense">
+                        <input type="radio" name="sort" value="defense">
                         Defense
                     </label>
                 </fieldset>
