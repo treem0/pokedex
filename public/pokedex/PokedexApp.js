@@ -19,14 +19,14 @@ class PokedexApp extends Component {
         const paging = new Paging({ totalResults: 0 });
         listSection.appendChild(paging.renderDOM());
 
-        const pokemonList = new PokemonList({ pokemon: [] });
+        const pokemonList = new PokemonList({ pokemons: [] });
         listSection.appendChild(pokemonList.renderDOM());
     
         async function loadPokemon() {
             const response = await getPokemon();
             const pokemon = response.Search;
             const totalResults = response.totalResults;
-            pokemonList.update({ pokemon: pokemon });
+            pokemonList.update({ pokemons: pokemon });
             paging.update({ totalResults: totalResults });
         }
 
