@@ -11,7 +11,7 @@ class SearchOptions extends Component {
 
             searchInput.value = searchParams.get('pokemon') || searchParams.get('attack') || searchParams.get('defense') || '';
 
-            const type = searchParams.get('sort');
+            const sort = searchParams.get('sort');
             if (sort) {
                 typeRadios.forEach(typeRadios => {
                     typeRadios.checked = typeRadios.value === sort;
