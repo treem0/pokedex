@@ -6,7 +6,7 @@ class Paging extends Component {
         const prevButton = dom.querySelector('.prev');
         const nextButton = dom.querySelector('.next');
 
-        if(!prevButton) {
+        if (!prevButton) {
             return;
         }
 
@@ -19,13 +19,13 @@ class Paging extends Component {
             const parsedPage = parseInt(searchParams.get('page'));
             if (isNaN(parsedPage)) {
                 page = 1;
-            }
-            else {
+            } else {
                 page = parsedPage;
             }
         }
+
         updateControls();
-        
+
         window.addEventListener('hashchange', () => {
             updateControls();
         });
@@ -41,45 +41,42 @@ class Paging extends Component {
         prevButton.addEventListener('click', () => {
             updatePage(-1);
         });
+
         nextButton.addEventListener('click', () => {
             updatePage(1);
         });
-
     }
 
     renderHTML() {
         const perPage = 20;
-        const totalResults = this.props.totalResults;
+        const count = this.props.count;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
 
         let page = 1;
         const parsedPage = parseInt(searchParams.get('page'));
-        if(isNaN(parsedPage)) {
+        if (isNaN(parsedPage)) {
             page = 1;
-        }
-        else {
+        } else {
             page = parsedPage;
         }
 
-        if (!totalResults) {
+        if (!count) {
             return /*html*/`
-            <p class="paging-section">No results, try again</p>
+                <p class="paging">No results, try another search</p>
             `;
         }
 
-        const lastPage = Math.ceil(totalResults / perPage);
-
+        const lastPage = Math.ceil(count / perPage);
 
         return /*html*/`
-        <section class="paging-section">
-            <button class="prev" ${page === 1 ? 'disabled' : ''}>Back</button>
-            <span>Page ${page} of ${lastPage}</span>
-            <button class="next" ${page === lastPage ? 'disabled' : ''}>Next</button>
-        </section>
-    `;
+            <p class="paging-section">
+                <button class="prev" ${page === 1 ? 'disabled' : ''}>◀</button>
+                <span>Page ${page} of ${lastPage}</span>
+                <button class="next" ${page === lastPage ? 'disabled' : ''}>▶</button> 
+            </p>
+        `;
     }
-
 }
 
 export default Paging;
