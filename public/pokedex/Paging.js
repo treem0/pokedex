@@ -73,9 +73,9 @@ class Paging extends Component {
 
         return /*html*/`
         <section class="paging-section">
-            <button class="prev" ${page === 1 ? 'disabled' : ''}>⇦</button>
+            <button class="prev" ${page === 1 ? 'disabled' : ''}>Back</button>
             <span>Page ${page} of ${lastPage}</span>
-            <button class="next" ${page === lastPage ? 'disabled' : ''}>⇨</button>
+            <button class="next" ${page === lastPage ? 'disabled' : ''}>Next</button>
         </section>
     `;
     }
