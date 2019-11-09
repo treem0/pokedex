@@ -21,7 +21,7 @@ class PokedexApp extends Component {
 
         const pokemonList = new PokemonList({ pokemon: [] });
         listSection.appendChild(pokemonList.renderDOM());
-        console.log(pokemonList);
+    
         async function loadPokemon() {
             const response = await getPokemon();
             const pokemon = response.Search;
