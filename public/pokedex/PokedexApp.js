@@ -7,7 +7,7 @@ import { getPokemon } from '../data/pokemon-api.js';
 
 class PokedexApp extends Component {
 
-    async onRender(dom) {
+    onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
 
