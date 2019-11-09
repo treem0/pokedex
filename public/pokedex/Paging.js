@@ -1,7 +1,6 @@
 import Component from '../Component.js';
 
 class Paging extends Component {
-
     onRender(dom) {
         const prevButton = dom.querySelector('.prev');
         const nextButton = dom.querySelector('.next');
@@ -15,11 +14,11 @@ class Paging extends Component {
         function updateControls() {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
-
             const parsedPage = parseInt(searchParams.get('page'));
             if (isNaN(parsedPage)) {
                 page = 1;
-            } else {
+            } 
+            else {
                 page = parsedPage;
             }
         }
@@ -34,7 +33,6 @@ class Paging extends Component {
             const queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
             searchParams.set('page', page + increment);
-
             window.location.hash = searchParams.toString();
         }
 
@@ -48,11 +46,10 @@ class Paging extends Component {
     }
 
     renderHTML() {
-        const perPage = 20;
-        const count = this.props.count;
+        const totalResults = this.props.totalResults;
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
-
+        
         let page = 1;
         const parsedPage = parseInt(searchParams.get('page'));
         if (isNaN(parsedPage)) {
@@ -60,14 +57,17 @@ class Paging extends Component {
         } else {
             page = parsedPage;
         }
-
-        if (!count) {
+        
+        if (!totalResults) {
             return /*html*/`
-                <p class="paging">No results, try another search</p>
+            <p class="paging">No results, try another search</p>
             `;
         }
-
-        const lastPage = Math.ceil(count / perPage);
+        
+        const perPage = 20;
+        const lastPage = Math.ceil(totalResults / perPage);
+        const start = (page * perPage) - (perPage -1, totalResults);
+        const end = Math.min(start + perPage - 1, totalResults);
 
         return /*html*/`
             <p class="paging-section">
