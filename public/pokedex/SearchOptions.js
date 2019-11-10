@@ -2,7 +2,7 @@ import Component from '../Component.js';
 
 class SearchOptions extends Component {
     onRender(form) {
-        const searchInput = form.querySelector('input[name=search]');
+        const searchInput = form.querySelector('input[name=search-bar]');
         const typeRadios = form.querySelectorAll('input[name=sort]');
 
         function updateControls() {
@@ -32,7 +32,7 @@ class SearchOptions extends Component {
             const queryString = '';
             const searchParams = new URLSearchParams(queryString);
 
-            searchParams.set(formData.get('sort'), formData.get('search'));
+            searchParams.set(formData.get('sort'), formData.get('search-bar'));
             searchParams.set('page', 1);
 
             window.location.hash = searchParams.toString();
@@ -42,17 +42,16 @@ class SearchOptions extends Component {
     
     renderHTML() {
         return /*html*/`
-        
             <form class="options">
-                <label for="search">
+                <label for="search-bar">
                     Search:
                 </label>
                 <p>
-                    <input id="search" name="search">
+                    <input id="search-bar" name="search-bar">
                 </p>
-                <fieldset class="type">
+                <fieldset class="sort-head">
                     <label>
-                        <input type="radio" name="sort" value="name" checked>
+                        <input type="radio" name="sort" value="pokemon" checked>
                         Name
                     </label>
                     <label>
@@ -66,7 +65,6 @@ class SearchOptions extends Component {
                 </fieldset>
             <button>Find</button>
         </form>
-    
     `;
     }
 }
