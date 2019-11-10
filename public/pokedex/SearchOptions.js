@@ -58,10 +58,6 @@ class SearchOptions extends Component {
                         <input type="radio" name="sort" value="attack">
                         Attack
                     </label>
-                    <label>
-                        <input type="radio" name="sort" value="defense">
-                        Defense
-                    </label>
                 </fieldset>
             <button>Find</button>
         </form>
